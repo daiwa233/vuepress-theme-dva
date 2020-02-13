@@ -1,0 +1,16 @@
+{
+  "name": "Dva Blog",
+  "short_name": "Dva Blog",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2196f3",
+  "description": "A simply readable Hacker News app.",
+  "icons": [
+    {
+    "src": "images/logo.jpg",
+    "sizes": "48x48",
+    "type": "image/png"
+    }],
+  "start_rul": "/"
+
+}
