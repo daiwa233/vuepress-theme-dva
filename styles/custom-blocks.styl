@@ -42,3 +42,21 @@
     summary
       outline none
       cursor pointer
+  &.cutline
+    display flex
+    align-items center
+    font-size 14px
+    color #999
+    .custom-block-title
+      color #2c3e50 
+    &::before,&::after
+      content ''
+      flex 1
+      height 1px
+      background #ccc
+      margin-top 20px
+    &::before
+      margin-right 10px
+
+    &::after
+      margin-left 10px

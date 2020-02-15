@@ -1,7 +1,7 @@
 ###
  # @Author: your name
  # @Date: 2020-02-13 08:46:03
- # @LastEditTime : 2020-02-13 17:01:50
+ # @LastEditTime : 2020-02-14 15:02:43
  # @LastEditors  : Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: \vuepress-theme-dva-devloping\deploy.sh
@@ -23,7 +23,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'fix:fix some bugs'
+git commit -m 'deploy'
 
 
 # 如果发布到 https://<USERNAME>.github.io

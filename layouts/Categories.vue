@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-06 15:15:46
- * @LastEditTime : 2020-02-12 23:19:51
+ * @LastEditTime : 2020-02-14 23:38:59
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\layouts\Categories.vue
  -->
 <template>
   <div class="category-page">
-    <global-header ></global-header>
+    <Header ></Header>
     <MobileSidebar></MobileSidebar>
     <div class="main">
      
@@ -63,7 +63,7 @@
 
 <script>
 import AsideContent from "@theme/components/sub-components/AsideContent.vue"
-
+import Header from "@theme/components/sub-components/Header.vue"
 import HomeFooter from '@theme/components/sub-components/Footer.vue'
 
 import MobileSidebar from "@theme/components/sub-components/MobileSidebar.vue"
@@ -71,7 +71,8 @@ export default {
   components: {
     AsideContent,
     MobileSidebar,
-    HomeFooter
+    HomeFooter,
+    Header
   },
   data() {
     return {};

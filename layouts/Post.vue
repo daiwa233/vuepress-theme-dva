@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-04 12:20:42
- * @LastEditTime : 2020-02-13 20:41:17
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-02-14 23:39:13
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva\layouts\Article.vue
  -->
 <template>
   <div >
-    <global-header :isScrollHidden="false" class="header"></global-header>
+    <Header></Header>
 
     <Sidebar></Sidebar>
     
@@ -45,7 +45,8 @@
             </span>
           </div>
         </div>
-        <Content class="container theme-dva-content"></Content>
+        <div class="container">
+          <Content class="theme-dva-content"></Content>
         <!-- <div class="relatives-container container">
           <div class="relative-title">
             <h3>相关推荐</h3>
@@ -57,6 +58,8 @@
             </div>
           </div>
         </div> -->
+        <PageFooter></PageFooter>
+        </div>
         
         <clientOnly>
           <ValineComment></ValineComment>
@@ -74,11 +77,15 @@
 import ValineComment from '@theme/components/sub-components/valine.vue'
 import Sidebar from '@theme/components/sub-components/Sidebar.vue'
 import ArticleBox from '@theme/components/sub-components/ArticleBox.vue'
+import PageFooter from '@theme/components/sub-components/PageFooter.vue'
+import Header from "@theme/components/sub-components/Header.vue"
   export default {
     components: {
       ValineComment,
       Sidebar,
-      ArticleBox
+      ArticleBox,
+      PageFooter,
+      Header
     },
     data() {
       return {}
@@ -134,21 +141,20 @@ import ArticleBox from '@theme/components/sub-components/ArticleBox.vue'
     },
     methods: {
       // 平滑滚动至视野中
-      smoothScroll() {
-        for(const domEl of document.querySelectorAll('.content__default .header-anchor')){
-          domEl.addEventListener('click', function(e) {
-            e.preventDefault();
+      // smoothScroll() {
+      //   for(const domEl of document.querySelectorAll('.content__default .header-anchor')){
+      //     domEl.addEventListener('click', function(e) {
+      //       e.preventDefault();
             
-            this.parentNode.scrollIntoView({behavior: 'smooth', block: 'start'});
-            // window.location.hash = `#${this.parentNode.getAttribute('id')}`;
-          })
-      }
-      },
+      //       this.parentNode.scrollIntoView({behavior: 'smooth', block: 'start'});
+      //       // window.location.hash = `#${this.parentNode.getAttribute('id')}`;
+      //     })
+      // }
+      // },
       
       
     },
     created() {
-
     },
     mounted() {
       // this.smoothScroll();

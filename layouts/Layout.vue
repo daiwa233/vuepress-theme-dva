@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-01 11:59:56
- * @LastEditTime : 2020-02-12 23:15:27
+ * @LastEditTime : 2020-02-14 17:29:47
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \dva\docs\theme\layouts\Layout.vue
@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import Home from '../components/views/Home.vue'
+import Home from '@theme/components/views/Home.vue'
 export default {
   components: {
     Home

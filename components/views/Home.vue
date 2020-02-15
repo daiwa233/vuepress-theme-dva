@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-03 15:50:28
- * @LastEditTime : 2020-02-13 16:29:54
+ * @LastEditTime : 2020-02-14 19:23:13
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva\components\views\Home.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="container-outer">
   
-    <global-header></global-header>
+    <Header></Header>
     <MobileSidebar></MobileSidebar>
     <main>
 
@@ -37,6 +37,8 @@ import AsideContent from '@theme/components/sub-components/AsideContent.vue'
 import HomeFooter from '@theme/components/sub-components/Footer.vue'
 import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
 import MobileSidebar from '@theme/components/sub-components/MobileSidebar.vue'
+import Header from "@theme/components/sub-components/Header.vue"
+
 import moment from 'moment'
 export default {
   components: {
@@ -44,7 +46,8 @@ export default {
     Pagination,
     AsideContent,
     HomeFooter,
-    MobileSidebar
+    MobileSidebar,
+    Header
   },
   data(){
     return {

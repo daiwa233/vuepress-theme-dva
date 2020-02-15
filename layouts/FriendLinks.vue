@@ -2,7 +2,7 @@
 
 <template>
   <div class="friend-links-page">
-    <global-header></global-header>
+    <Header></Header>
     <MobileSidebar></MobileSidebar>
     <div class="main">
       <Content v-if="!!$page.frontmatter.content"></Content>
@@ -28,10 +28,12 @@
 <script>
 import MobileSidebar from "@theme/components/sub-components/MobileSidebar.vue"
 import ValineComment from '@theme/components/sub-components/valine.vue'
+import Header from "@theme/components/sub-components/Header.vue"
   export default {
     components: {
       MobileSidebar,
-      ValineComment
+      ValineComment,
+      Header
     }
   }
 </script>
@@ -49,6 +51,7 @@ import ValineComment from '@theme/components/sub-components/valine.vue'
     .link-list{
       display: flex;
       flex-wrap: wrap;
+      margin-top: 20px;
       transition: all .3s ease-in-out;
       justify-content: space-between;
       .link-item{

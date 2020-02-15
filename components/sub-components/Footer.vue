@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-08 19:36:57
- * @LastEditTime : 2020-02-10 21:13:41
+ * @LastEditTime : 2020-02-14 14:30:33
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\Footer.vue
@@ -48,9 +48,6 @@
     transform-origin: 0 0;
     transform: scale(0.5, 0.5);
     box-sizing: border-box;
-  }
-  >div{
-    letter-spacing: 1.5px;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <global-header></global-header>
+    <Header></Header>
     <MobileSidebar></MobileSidebar>
     <main class="main">
       <div class="y-m-block" v-for="(item,i) in $placeOnArticle" :key="i">
@@ -27,13 +27,13 @@
 
 <script>
 import HomeFooter from "@theme/components/sub-components/Footer.vue";
-
+import Header from "@theme/components/sub-components/Header.vue"
 import MobileSidebar from "@theme/components/sub-components/MobileSidebar.vue";
 export default {
   components: {
     MobileSidebar,
     HomeFooter,
-    
+    Header
   },
   data() {
     return {

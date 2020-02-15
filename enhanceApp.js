@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-02 22:44:10
- * @LastEditTime : 2020-02-12 21:44:46
+ * @LastEditTime : 2020-02-15 01:33:26
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \dva\docs\.vuepress\theme\enhanceApp.js
@@ -32,4 +32,7 @@ export default({
       $placeOnArticle
     }
   })
+  if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined') {
+    console.log("%c ", "background: url('https://image.start-here.cn/logo.jpg') no-repeat center;background-size:200px 200px;padding-left:640px;padding-bottom: 242px;")
+  }
 }

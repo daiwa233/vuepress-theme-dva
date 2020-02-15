@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-09 11:14:44
- * @LastEditTime : 2020-02-13 12:38:36
+ * @LastEditTime : 2020-02-15 11:20:42
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\valine.vue
@@ -21,15 +21,24 @@
     
     mounted() {
 
-      import ('leancloud-storage').then(AV => {
-        window.AV = AV;
-        const {valineConfig = {}} = this.$themeConfig;
+      // import ('leancloud-storage').then(AV => {
+      //   window.AV = AV;
+      //   const {valineConfig = {}} = this.$themeConfig;
 
-        const Valine = require('valine');
-        new Valine({
+      //   const Valine = require('valine');
+      //   new Valine({
+      //     el:'#vcomments',
+      //     ...valineConfig
+      //   })
+      // })
+      import ('valine').then(Valine => {
+        
+        const {valineConfig = {}} = this.$themeConfig;
+        new Valine.default({
           el:'#vcomments',
           ...valineConfig
         })
+        
       })
 
       

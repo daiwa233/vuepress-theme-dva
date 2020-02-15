@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-02-03 14:18:54
- * @LastEditTime : 2020-02-13 16:53:07
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime : 2020-02-14 23:38:38
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\index.js
  */
@@ -45,9 +45,8 @@ views && views.frontmatters && frontmatters.push(...views.frontmatters);
 
 return {
     
-  
   plugins: [
-    '@vuepress/plugin-nprogress',
+    '@vuepress/nprogress',
     ['@vuepress/last-updated',
       {
         transformer: (timestamp, lang) => {
@@ -130,6 +129,12 @@ return {
       before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
       after: () => '</details>\n'
     }],
+    ['container', {
+      type: 'cutline',
+      defaultTitle: {
+        '/': '分割线'
+      }
+    }]
   ]
   
 }

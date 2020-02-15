@@ -1,7 +1,7 @@
 
 <template>
   <div class="category-page">
-    <global-header ></global-header>
+    <Header ></Header>
     <MobileSidebar></MobileSidebar>
     <div class="main">
       
@@ -33,13 +33,15 @@ import { Pagination } from '@vuepress/plugin-blog/lib/client/components'
 import HomeFooter from '@theme/components/sub-components/Footer.vue'
 import ArticleBox from '@theme/components/sub-components/ArticleBox.vue'
 import MobileSidebar from "@theme/components/sub-components/MobileSidebar.vue"
+import Header from "@theme/components/sub-components/Header.vue"
 export default {
   components: {
     AsideContent,
     MobileSidebar,
     HomeFooter,
     ArticleBox,
-    Pagination
+    Pagination,
+    Header
   },
   data() {
     return {};

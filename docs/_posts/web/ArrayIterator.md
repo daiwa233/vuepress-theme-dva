@@ -38,6 +38,9 @@ category: [web,web/javascript]
 ::: details 
 随便写点啥
 :::
+
+::: cutline 分隔
+:::
  ## 2. Array.find()  Array.findIndex()
 
   这两个方法会返回**满足回调函数中条件**的一项，`Array.find()`是返回哪一项，`Array.findIndex()`是返回那一项的索引。使用场景：当需要获得数组中某一满足条件的具体的项或者索引值进行操作

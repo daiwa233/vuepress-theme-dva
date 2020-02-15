@@ -1,13 +1,12 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-04 16:47:19
- * @LastEditTime : 2020-02-13 12:58:08
+ * @LastEditTime : 2020-02-15 00:15:51
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\header.vue
  -->
 <template>
-  <ModuleTransition>
     <header class="global-header" id="global-header"  v-show="sidebarOpen || showFlag">
      
       <div class="pull_left">
@@ -48,7 +47,7 @@
       </div>
       <div class="mask" v-show="sidebarOpen" @click="toogle_sidebar"></div>
     </header>
-  </ModuleTransition>
+
 </template>
 
 <script>
@@ -57,13 +56,9 @@ import SearchBox from '@SearchBox'
 import DropdownTransition from '@theme/components/sub-components/DropdownTransition.vue'
 
 export default {
-  name: "global-header",
+  name: "Header",
   components: { SearchBox , DropdownTransition},
   props: {
-    isScrollHidden: {
-      type: Boolean,
-      default: true,
-    },
     
   },
   data() {
@@ -86,31 +81,6 @@ export default {
     },
   },
   methods: {
-    scrollCallback() {
-      const _that = this;
-      let y = 0,
-        time = 0;
-      return function() {
-        // if (window.scrollY == 0){
-        //   _that.headerStyle = {background: 'rgba(0,0,0,0)', color: '#fff'};
-        // }
-        if (Date.now() - time <= 100) return;
-        
-        // if (window.scrollY > 0) {
-        //   _that.headerStyle.background = "#fff";
-        //   _that.headerStyle.color = "inherit";
-        // }
-        // 向下滚动
-        if (window.scrollY > y) {
-          _that.showFlag = false;
-        } else {
-          // 向上滚动
-          _that.showFlag = true;
-        }
-        y = window.scrollY;
-        time = Date.now();
-      };
-    },
     toogle_sidebar() {
       this.sidebarOpen = !this.sidebarOpen;
       if (this.sidebarOpen && this.PubSub) {
@@ -128,20 +98,17 @@ export default {
     import ('pubsub-js').then(PubSub => {
       this.PubSub = PubSub;
     })
-    this.isScrollHidden && window.addEventListener("scroll", this.scrollCallback(), false);
   }
 };
 </script>
-
 <style lang="scss" scoped>
-$headerColor: rgba(255, 255, 255, 1);
-.global-header {
+  .global-header {
   z-index:20;
   width: 100%;
   position: fixed;
   box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
   height: 3.6rem;
-  background: $headerColor;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,37 +136,15 @@ $headerColor: rgba(255, 255, 255, 1);
     }
   }
   .nav-links {
-    padding: 15px 35px 15px 0px;
     position: relative;
+    padding: 15px 35px 15px 0px; 
     .nav-link-item {
+      display: inline-block;
       margin-left: 1.5rem;
+      transition: all .3s ease-in-out;
       .dropdown-wrapper{
         cursor: pointer;
-        .link-items{
-            list-style: none;
-            position: absolute;
-            right: 0;
-            padding: 10px 20px;
-            display: none;
-            margin-top: 13px;
-            width: max-content;
-            background: #fff;
-            -webkit-box-shadow: 0 5px 20px -4px rgba(0,0,0,.5);
-            box-shadow: 0 5px 20px -4px rgba(0,0,0,.5);
-            animation: sub_menus .3s .1s ease both;
-            >li{
-              padding:  5px 10px;
-            }
-            &::before{
-              position: absolute;
-              top: -20px;
-              left: 0;
-              width: 100%;
-              height: 25px;
-              content: '';
-            }
-            
-        }
+        
         &:hover >.link-items{
           display: block;
         }
@@ -234,14 +179,11 @@ $headerColor: rgba(255, 255, 255, 1);
   @keyframes sub_menus {
     0% {
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
+
     transform: translateY(10px);
   }
   100% {
     opacity: 1;
-    -ms-filter: none;
-    filter: none;
     transform: translateY(0);
   }
   }
@@ -255,9 +197,10 @@ $headerColor: rgba(255, 255, 255, 1);
 
 
   .mask{
+    position: fixed;
     width: 100vw;
     height: calc(100vh - 58px);
-    position: fixed;
+    
     left: 0;
     top: 58px;
     z-index: 9;
@@ -280,6 +223,34 @@ $headerColor: rgba(255, 255, 255, 1);
       height: 1.25rem;
     }
 }
- 
+
+@media screen and (min-width: 719px){
+  .link-items{
+            display: none;
+            height: auto !important;
+            position: absolute;
+            list-style: none;
+            right: 0;
+            padding: 10px 20px;
+            margin-top: 13px;
+            width: max-content;
+            background: #fff;
+            -webkit-box-shadow: 0 5px 20px -4px rgba(0,0,0,.5);
+            box-shadow: 0 5px 20px -4px rgba(0,0,0,.5);
+            animation: sub_menus .3s .1s ease both;
+            >li{
+              padding:  5px 10px;
+            }
+            &::before{
+              position: absolute;
+              top: -20px;
+              left: 0;
+              width: 100%;
+              height: 25px;
+              content: '';
+            }
+            
+        }
+}
 }
 </style>

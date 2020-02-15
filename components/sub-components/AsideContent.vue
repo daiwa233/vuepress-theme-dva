@@ -2,7 +2,7 @@
  * @Author: your name
  * @Date: 2020-02-05 18:09:11
  * @LastEditTime : 2020-02-13 13:30:14
- * @LastEditors  : Please set LastEditors
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\aside-content.vue
  -->
@@ -219,7 +219,8 @@ components: {DropdownTransition},
     }
     .site-info {
       .site-title {
-        font-size: 22px;
+        font-size: 1.5rem;
+        margin: 10px 0 15px;
       }
     }
     .article-info {

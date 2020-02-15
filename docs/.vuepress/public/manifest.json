@@ -1,16 +1,15 @@
 {
   "name": "Dva Blog",
-  "short_name": "Dva Blog",
-  "start_url": ".",
+  "short_name": "Dva",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#2196f3",
-  "description": "A simply readable Hacker News app.",
+  "background_color": "#ffffff",
+  "description": "A theme based on vuepress theme",
   "icons": [
     {
     "src": "images/logo.jpg",
-    "sizes": "48x48",
+    "sizes": "144x144",
     "type": "image/png"
-    }],
-  "start_rul": "/"
+    }]
 
 }

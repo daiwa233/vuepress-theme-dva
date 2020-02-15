@@ -1,7 +1,7 @@
 
 <template>
   <div class="tag-page">
-    <global-header ></global-header>
+    <Header ></Header>
     <MobileSidebar></MobileSidebar>
     <main class="main">
      
@@ -29,13 +29,14 @@
 import AsideContent from "@theme/components/sub-components/AsideContent.vue"
 
 import HomeFooter from '@theme/components/sub-components/Footer.vue'
-
+import Header from "@theme/components/sub-components/Header.vue"
 import MobileSidebar from "@theme/components/sub-components/MobileSidebar.vue"
 export default {
   components: {
     AsideContent,
     MobileSidebar,
-    HomeFooter
+    HomeFooter,
+    Header
   },
   data() {
     return {};
