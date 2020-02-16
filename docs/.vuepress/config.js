@@ -65,6 +65,9 @@ module.exports = {
       visitor: true,
       avatar: 'retro'
     },
+    footer: [
+      {text: '2018-2020 By Dva',icon:'iconfont icon-copyright'}
+    ],
     friendlinks: require('./friendlinks'),
     sitemap: {
       hostname: 'https://start-here.cn'

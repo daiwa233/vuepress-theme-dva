@@ -81,7 +81,8 @@ import DropdownTransition from '@theme/components/sub-components/DropdownTransit
       return this.$route.path;
     },
     showdir() {
-      return this.$page.id==='post' && this.$page.title && this.$page.headers.length>0;
+      // fix: 当文章没有h2,h3标题的时候 this.$page.headers === 'undefined'
+      return this.$page.id==='post' && this.$page.title && this.$page.headers;
     }
     },
     props: {

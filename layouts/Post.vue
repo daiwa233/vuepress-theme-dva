@@ -27,7 +27,7 @@
               <i class="iconfont icon-riqiqishu"></i>
               {{$page.frontmatter.date | formatDate}}
             </span>
-            <span :id="path" class="leancloud_visitors" :data-flag-title="$page.title">
+            <span v-if="visitor" :id="path" class="leancloud_visitors" :data-flag-title="$page.title">
               <i class="iconfont icon-ico_yueduliang"></i>
               <span class="leancloud-visitors-count"></span>
             </span>
@@ -102,20 +102,19 @@ import Header from "@theme/components/sub-components/Header.vue"
       },
       articleCategory() {
          if (this.category) {
-           return this.category
-                  .filter(item =>  item.split('/').length === 1)
-                  .map(item => {
-                    // 分类和分类名字做映射
-                    if (this.$themeConfig.categoryNames) {
-                      for (const val of Object.keys(this.$themeConfig.categoryNames)) {
-                        if (item === val) return this.$themeConfig.categoryNames[val]
-                      }
-                    }
-                    return item;
-                  })
+           // fix: category为字符串时触发错误
+           if (typeof this.category === 'string') return [this.category];
+
+           if (Array.isArray(this.category))
+           return this.category.filter(item =>  item.split('/').length === 1);
+                  
           }
         return [];
       },
+      // add  文章阅读量统计可选
+      visitor() {
+        return this.$themeConfig.valineConfig ? !!this.$themeConfig.valineConfig.visitor : false;
+      }
       // 获得该文章标签，分类下的推荐文章
       // getRelatives() {
       //   let step = [];

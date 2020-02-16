@@ -18,7 +18,7 @@
       </div>
       <div class="article-info">
         <div class="nums">
-          <a href="#" target="_self">
+          <a href="/" target="_self">
             <p>文章</p>
             <p>{{ articleNum.length }}</p>
           </a>
@@ -63,7 +63,7 @@
         <div>{{ $themeConfig.notifyContent || '笨蛋'}}</div>
       </div>
     </div>
-    <div class="category-card card">
+    <div class="category-card card" v-if="$category.length>0">
       <div class="title">
         <i class="iconfont icon-fenlei"></i>
         <span>分类</span>
@@ -102,7 +102,7 @@
       </ul>
       
     </div>
-    <div class="card tag-card">
+    <div class="card tag-card" v-if="$tag.length>0">
       <div class="title">
         <i class="iconfont icon-label"></i>
         <span>标签</span>
@@ -115,7 +115,7 @@
         </span>
       </div>
     </div>
-    <div class="card category-card">
+    <div class="card category-card" v-if="$placeOnArticle.length>0">
       <div class="title">
         <i class="iconfont icon-guidang1"></i>
         <span>归档</span>

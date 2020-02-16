@@ -2,7 +2,7 @@
  * @Author: your name
  * @Date: 2020-02-13 23:46:27
  * @LastEditTime : 2020-02-14 15:31:37
- * @LastEditors  : Please set LastEditors
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\PageFooter.vue
  -->
@@ -63,11 +63,11 @@ export default {
       return true;
     },
     copyrightText() {
-      if (typeof this.$frontmatter.copyright === "string") {
-        return this.$frontmatter.copyright;
+      if (typeof this.$frontmatter.copyrightText === "string") {
+        return this.$frontmatter.copyrightText;
       }
-      if (typeof this.$themeConfig.copyright === "string") {
-        return this.$themeConfig.copyright;
+      if (typeof this.$themeConfig.copyrightText === "string") {
+        return this.$themeConfig.copyrightText;
       }
       return "转载请注明出处";
     },
@@ -82,7 +82,7 @@ export default {
       return index-1 >= 0 ? this.pages[index-1] : null;
     },
      nextPage() {
-     let index = this.pages.findIndex(item => item===this.$page);
+      let index = this.pages.findIndex(item => item===this.$page);
       return index+1 >= 0 ? this.pages[index+1] : null;
     }
   },

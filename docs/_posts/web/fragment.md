@@ -3,6 +3,7 @@ title: 零碎知识01
 date:  2019-11-26
 tags: [javascript,h5]
 category: ['web', 'web/javascript']
+author: dva
 ---
 这个版块主要记录一些零碎但有必要记录的知识点
 <!-- more -->
