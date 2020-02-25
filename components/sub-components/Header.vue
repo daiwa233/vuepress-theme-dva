@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-04 16:47:19
- * @LastEditTime : 2020-02-15 00:15:51
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-02-17 21:13:42
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vuepress-theme-dva-devloping\components\sub-components\header.vue
  -->
@@ -103,9 +103,9 @@ export default {
 </script>
 <style lang="scss" scoped>
   .global-header {
-  z-index:20;
-  width: 100%;
   position: fixed;
+  box-sizing: border-box;
+  width: 100%;
   box-shadow: 0 5px 6px -5px rgba(133, 133, 133, 0.6);
   height: 3.6rem;
   background: #fff;
@@ -113,6 +113,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s;
+  padding: 0 20px;
+  
+  z-index:20;
   .pull_left {
     font-size: 20px;
     padding-left: 15px;
@@ -137,7 +140,7 @@ export default {
   }
   .nav-links {
     position: relative;
-    padding: 15px 35px 15px 0px; 
+    padding: 15px 15px 15px 0px; 
     .nav-link-item {
       display: inline-block;
       margin-left: 1.5rem;

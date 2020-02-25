@@ -1,7 +1,7 @@
 ---
 title: 零碎知识01
 date:  2019-11-26
-tags: [javascript,h5]
+tag: [javascript,h5]
 category: ['web', 'web/javascript']
 author: dva
 ---
