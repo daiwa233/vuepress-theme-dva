@@ -23,9 +23,9 @@
           <i class="iconfont icon-riqiqishu"></i>
           <span class="post_date" >{{article.frontmatter.date | formatDate}}</span>
         </time>
-        <span class="article_meta" v-if="article.frontmatter.tags">
+        <span class="article_meta" v-if="tags">
         <i class="iconfont icon-label"></i>
-        <span class="article_tag"  v-for="(tag,i) in article.frontmatter.tags" :key="i">{{tag}}&nbsp;&nbsp;</span>
+        <span class="article_tag"  v-for="(tag,i) in tags" :key="i">{{tag}}&nbsp;&nbsp;</span>
         </span>
       </div>
 
@@ -51,6 +51,9 @@
       title() {
         return this.article.frontmatter.title || this.article.title;
       },
+      tags() {
+        return this.article.frontmatter.tag || this.article.frontmatter.tags;
+      }
     },
     mounted() {
         

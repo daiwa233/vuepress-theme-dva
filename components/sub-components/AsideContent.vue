@@ -314,6 +314,8 @@ components: {DropdownTransition},
     flex-direction: column;
     .tag-content{
       margin:15px 0 15px;
+      display: flex;
+      flex-wrap: wrap;
       .all{
         background: #3eaf7c;
       }
@@ -332,8 +334,6 @@ components: {DropdownTransition},
         }
         
         &:hover {
-          padding: 7px;
-          font-size: 15px;
           border-radius: .5rem;
         }
       }
